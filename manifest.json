@@ -1,0 +1,12 @@
+{
+  "name": "CRP — Gestion de budget",
+  "short_name": "CRP",
+  "description": "Gérez vos revenus, dépenses, budgets et projets d'épargne.",
+  "lang": "fr-FR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8f5",
+  "theme_color": "#17352b",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

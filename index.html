@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17352b">
+<meta name="description" content="CRP — ton budget, tes choix, tes objectifs.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>CRP — Gestion de budget</title>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#" aria-label="CRP accueil"><span class="brand-mark">C</span><span><b>CRP</b><small>Gestion de budget</small></span></a>
+    <nav id="nav">
+      <button class="nav-item active" data-page="dashboard">◫ <span>Vue d'ensemble</span></button>
+      <button class="nav-item" data-page="transactions">↕ <span>Opérations</span></button>
+      <button class="nav-item" data-page="budgets">▤ <span>Budgets</span></button>
+      <button class="nav-item" data-page="recurring">↻ <span>Récurrences</span></button>
+      <button class="nav-item" data-page="savings">◎ <span>Épargne & projets</span></button>
+      <button class="nav-item" data-page="debts">▱ <span>Crédits & dettes</span></button>
+      <button class="nav-item" data-page="settings">⚙ <span>Paramètres & données</span></button>
+    </nav>
+    <div class="sidebar-note"><span class="dot"></span> Vos données restent sur cet appareil<br><small>Prototype local · synchronisation à configurer</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><p class="eyebrow" id="today-label">VOTRE ARGENT, EN CLAIR</p><h1 id="page-title">Vue d'ensemble</h1></div><button class="primary" id="quick-add">＋ Ajouter une opération</button></header>
+    <section id="page-content"></section>
+    <footer>CRP · Une méthode inspirée du Kakeibo <span>Suivi budgétaire personnel</span></footer>
+  </main>
+</div>
+<div class="modal-backdrop hidden" id="modal">
+  <form class="modal" id="transaction-form">
+    <div class="modal-head"><div><p class="eyebrow">NOUVELLE OPÉRATION</p><h2>Ajouter au budget</h2></div><button type="button" class="icon-button" id="close-modal" aria-label="Fermer">×</button></div>
+    <label>Type<select id="tx-type"><option value="expense">Dépense</option><option value="income">Revenu</option><option value="transfer">Épargne / virement</option></select></label>
+    <label>Libellé<input id="tx-name" required placeholder="Ex. courses, salaire, assurance…"></label>
+    <div class="two"><label>Montant (€)<input id="tx-amount" required type="number" min="0.01" step="0.01" placeholder="0,00"></label><label>Date<input id="tx-date" type="date" required></label></div>
+    <label>Catégorie<select id="tx-category"><option>Besoins essentiels</option><option>Envies et loisirs</option><option>Culture et apprentissage</option><option>Imprévus</option><option>Logement</option><option>Transport</option><option>Courses</option><option>Santé</option><option>Abonnements</option><option>Revenu</option><option>Épargne</option><option>Autre</option></select></label>
+    <label>Compte<select id="tx-account"><option>Compte courant</option><option>Espèces</option><option>Épargne</option><option>Autre compte</option></select></label>
+    <label>Note facultative<textarea id="tx-note" rows="2" placeholder="Un détail utile…"></textarea></label>
+    <button class="primary full" type="submit">Enregistrer l'opération</button>
+  </form>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
